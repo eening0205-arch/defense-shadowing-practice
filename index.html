@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>答辩稿跟读练习</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Defense Shadowing</p>
+          <h1>Ван Нин · Доклад</h1>
+        </div>
+        <div class="summary">
+          <span id="progressText">0 / 0</span>
+          <div class="meter" aria-hidden="true"><span id="progressBar"></span></div>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="segment-pane" aria-label="Список фрагментов">
+          <div class="pane-tools">
+            <button class="chip is-active" type="button" data-filter="all">全部</button>
+            <button class="chip" type="button" data-filter="todo">未练</button>
+            <button class="chip" type="button" data-filter="done">已练</button>
+          </div>
+          <ol id="segmentList" class="segment-list"></ol>
+        </aside>
+
+        <section class="practice-pane" aria-live="polite">
+          <div class="segment-meta">
+            <span id="segmentCounter">001</span>
+            <button id="doneButton" class="icon-text" type="button">标记已练</button>
+          </div>
+
+          <article class="text-panel">
+            <p id="russianText" class="russian"></p>
+            <p id="chineseText" class="chinese"></p>
+          </article>
+
+          <audio id="player" preload="metadata"></audio>
+
+          <div class="transport">
+            <button id="prevButton" class="icon-button" type="button" title="上一段" aria-label="上一段">‹</button>
+            <button id="playButton" class="primary-button" type="button">播放</button>
+            <button id="nextButton" class="icon-button" type="button" title="下一段" aria-label="下一段">›</button>
+          </div>
+
+          <div class="control-grid">
+            <label>
+              <span>速度</span>
+              <select id="speedSelect">
+                <option value="0.75">0.75x</option>
+                <option value="0.85" selected>0.85x</option>
+                <option value="1">1x</option>
+                <option value="1.1">1.1x</option>
+                <option value="1.25">1.25x</option>
+              </select>
+            </label>
+            <label class="toggle-row">
+              <input id="loopToggle" type="checkbox" checked />
+              <span>单段循环</span>
+            </label>
+            <label class="toggle-row">
+              <input id="autoNextToggle" type="checkbox" />
+              <span>自动下一段</span>
+            </label>
+          </div>
+
+          <div class="recorder">
+            <div class="recorder-head">
+              <span id="recordStatus">录音待机</span>
+              <div id="recordLight" class="record-light" aria-hidden="true"></div>
+            </div>
+            <div class="recorder-actions">
+              <button id="recordButton" class="icon-text" type="button">开始录音</button>
+              <button id="playRecordingButton" class="icon-text" type="button" disabled>回放录音</button>
+              <a id="downloadRecording" class="download-link is-disabled" href="#" download>下载</a>
+            </div>
+            <audio id="recordingPlayer" controls></audio>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="segments.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
