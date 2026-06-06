@@ -65,34 +65,6 @@ button:disabled,
   background: var(--surface);
 }
 
-.top-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.top-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 0 14px;
-  border: 1px solid rgba(35, 105, 75, 0.24);
-  border-radius: 8px;
-  background: #eef5ef;
-  color: var(--accent-strong);
-  font-size: 14px;
-  font-weight: 750;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.top-link:hover {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: #fff;
-}
-
 .eyebrow {
   margin: 0 0 4px;
   color: var(--gold);
@@ -425,20 +397,19 @@ h1 {
 }
 
 @media (max-width: 860px) {
+  body {
+    background: var(--surface);
+  }
+
+  .app-shell {
+    min-height: 100dvh;
+  }
+
   .topbar {
     align-items: start;
     flex-direction: column;
-    padding: 18px;
-  }
-
-  .top-actions {
-    align-items: stretch;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .top-link {
-    width: 100%;
+    gap: 14px;
+    padding: 14px 16px;
   }
 
   .summary,
@@ -453,29 +424,53 @@ h1 {
   }
 
   .segment-pane {
-    max-height: 280px;
+    order: 2;
+    max-height: 240px;
     border-right: 0;
+    border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
   }
 
+  .pane-tools {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #fbfcfa;
+  }
+
   .practice-pane {
-    padding: 16px;
+    order: 1;
+    gap: 12px;
+    padding: 14px;
   }
 
   .text-panel {
-    max-height: 44vh;
-    padding: 18px;
+    max-height: none;
+    padding: 16px;
   }
 
   .russian {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.42;
   }
 
   .chinese {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .control-grid {
     grid-template-columns: 1fr;
+  }
+
+  .transport {
+    grid-template-columns: 46px minmax(120px, 1fr) 46px;
+  }
+
+  .segment-meta {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 8px 0;
+    background: var(--surface);
   }
 }
