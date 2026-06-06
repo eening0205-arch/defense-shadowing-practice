@@ -65,6 +65,34 @@ button:disabled,
   background: var(--surface);
 }
 
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.top-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(35, 105, 75, 0.24);
+  border-radius: 8px;
+  background: #eef5ef;
+  color: var(--accent-strong);
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.top-link:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
 .eyebrow {
   margin: 0 0 4px;
   color: var(--gold);
@@ -401,6 +429,16 @@ h1 {
     align-items: start;
     flex-direction: column;
     padding: 18px;
+  }
+
+  .top-actions {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .top-link {
+    width: 100%;
   }
 
   .summary,

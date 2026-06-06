@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>最终答辩 7 问 | 王宁</title>
+  <style>
+    :root {
+      --ink: #182230;
+      --muted: #667085;
+      --line: #d9dee8;
+      --paper: #f7f9fc;
+      --panel: #ffffff;
+      --blue: #2563eb;
+      --blue-soft: #dbeafe;
+      --green: #15803d;
+      --green-soft: #dcfce7;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --red: #b42318;
+      --red-soft: #fee4e2;
+      --violet: #6d28d9;
+      --violet-soft: #ede9fe;
+      --cyan: #0e7490;
+      --cyan-soft: #cffafe;
+      --radius: 8px;
+      --shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #eff6ff, var(--paper) 360px);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    main {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 64px;
+    }
+
+    .hero, .card, .question {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: clamp(22px, 4vw, 36px);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 10px 0 12px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(24px, 3vw, 34px);
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 12px; }
+
+    .eyebrow, .tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .eyebrow {
+      padding: 4px 10px;
+      color: #1e40af;
+      background: var(--blue-soft);
+      border: 1px solid #bfdbfe;
+    }
+
+    .lead {
+      max-width: 78ch;
+      font-size: 18px;
+      color: #344054;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      padding: 16px;
+    }
+
+    .card.span-4 { grid-column: span 4; }
+    .card.span-12 { grid-column: span 12; }
+
+    .tag {
+      padding: 3px 8px;
+      margin-bottom: 8px;
+    }
+
+    .tag.blue { color: #1d4ed8; background: var(--blue-soft); }
+    .tag.green { color: var(--green); background: var(--green-soft); }
+    .tag.amber { color: var(--amber); background: var(--amber-soft); }
+    .tag.red { color: var(--red); background: var(--red-soft); }
+    .tag.violet { color: var(--violet); background: var(--violet-soft); }
+    .tag.cyan { color: var(--cyan); background: var(--cyan-soft); }
+
+    .source-map {
+      margin: 18px 0 26px;
+    }
+
+    .questions {
+      display: grid;
+      gap: 16px;
+    }
+
+    .question {
+      overflow: hidden;
+      border-left: 6px solid var(--blue);
+    }
+
+    .q-head {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 52px minmax(0, 1fr);
+      padding: 18px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .num {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--blue);
+      border-radius: var(--radius);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .q-body {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+    }
+
+    .ru {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.7;
+      color: #1f2a44;
+    }
+
+    .script {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid #86efac;
+      border-radius: var(--radius);
+      background: #f0fdf4;
+    }
+
+    .zh, .safe {
+      padding: 11px 12px;
+      border-radius: var(--radius);
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+
+    .safe {
+      border-color: #fed7aa;
+      background: #fff7ed;
+      color: #7c2d12;
+    }
+
+    .mini {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .term {
+      display: grid;
+      gap: 8px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .term h3 {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .term h3 span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .term .ru {
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      main { width: min(100% - 20px, 1080px); padding-top: 18px; }
+      .card.span-4 { grid-column: span 12; }
+      .q-head { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="eyebrow">最终 PPT 版 · 模拟追问 7 道</span>
+      <h1>按学长问题风格准备你的答辩追问</h1>
+      <p class="lead">
+        这 7 道题不是照搬学长题目，而是照搬老师的问法：为什么选地点、概念怎么解释、为什么选对象、用了什么方法、为什么这样设计实验、为什么选指标、结果能不能推广。
+      </p>
+    </section>
+
+    <section class="source-map grid">
+      <div class="card span-4">
+        <span class="tag blue">依据</span>
+        <h3>最终 PPT</h3>
+        <p>28 页，重点在第 7 页方法、第 14-18 页两次实验、第 19-23 页结果和边界。</p>
+      </div>
+      <div class="card span-4">
+        <span class="tag violet">照片题型</span>
+        <h3>老师问法</h3>
+        <p>地点选择、核心概念、研究对象、方法内容、评价指标和推广价值。</p>
+      </div>
+      <div class="card span-4">
+        <span class="tag green">背诵原则</span>
+        <h3>短句优先</h3>
+        <p>先答 3-4 个简单俄语句子。老师继续追问时，再补细节和边界。</p>
+      </div>
+    </section>
+
+    <section class="questions">
+      <article class="question">
+        <div class="q-head">
+          <div class="num">1</div>
+          <div>
+            <span class="tag blue">地点选择</span>
+            <h2>Почему для исследования была выбрана провинция Хэнань и база «Хэнда Янгуан»?</h2>
+            <p class="mini">对应照片题型：为什么选择某个地区作为研究对象。</p>
+          </div>
+        </div>
+        <div class="q-body">
+          <div class="script">
+            <p class="ru">Провинция Хэнань была выбрана не случайно. Это крупная по населению и числу школьников провинция Китая. Ее уровень развития можно считать средним: это не самый развитый и не самый слабый регион. Поэтому Хэнань подходит как достаточно показательная практическая база. Кроме того, там были дети 12-13 лет, площадки, педагоги и условия для проведения 36 занятий, контроля ЧСС и тестирования.</p>
+            <p class="zh">中文：河南不是随便选的。河南是中国人口大省、学生数量大省，发展水平中等，不是最好也不是最差，所以作为实践研究基地有一定代表性。同时基地具备 12-13 岁儿童、场地、教师、36 次课、心率监控和前后测条件。</p>
+          </div>
+          <p class="safe">边界：不要说“河南完全代表整个中国”，也不要说“河南是中国人口最多的省份”。更稳妥：河南是人口和学生规模较大的省份，发展水平中等，结果首先适用于类似的休养与健康促进机构。</p>
+        </div>
+      </article>
+
+      <article class="question">
+        <div class="q-head">
+          <div class="num">2</div>
+          <div>
+            <span class="tag violet">核心概念</span>
+            <h2>Что в Вашем исследовании означает педагогическая технология физического воспитания?</h2>
+            <p class="mini">对应照片题型：请解释你的核心术语。</p>
+          </div>
+        </div>
+        <div class="q-body">
+          <div class="script">
+            <p class="ru">В моей работе педагогическая технология - это не одно упражнение. Это система занятий в лагере. Она включает содержание, структуру 20+10, методы руководства, контроль нагрузки и оценку результатов.</p>
+            <p class="zh">中文：我的“教学技术”不是一个动作或一个练习，而是一套营地课程系统，包括内容、20+10 结构、指导方法、负荷控制和结果评价。</p>
+          </div>
+          <p class="safe">边界：不要把技术说成“体育锻炼有好处”。要说它是“系统”。</p>
+        </div>
+      </article>
+
+      <article class="question">
+        <div class="q-head">
+          <div class="num">3</div>
+          <div>
+            <span class="tag amber">对象选择</span>
+            <h2>Почему исследование проводилось с детьми 12-13 лет?</h2>
+            <p class="mini">对应照片题型：为什么选这个年龄/人群。</p>
+          </div>
+        </div>
+        <div class="q-body">
+          <div class="script">
+            <p class="ru">Возраст 12-13 лет выбран по нескольким причинам. Во-первых, в этом возрасте важно развивать физические качества и двигательные навыки. Во-вторых, многие дети уже учатся в средней школе. В Китае впереди важный экзамен для поступления в старшую школу, и физическая подготовленность имеет практическое значение. Поэтому родители начинают больше интересоваться спортивно-оздоровительными лагерями.</p>
+            <p class="zh">中文：12-13 岁有几个理由。第一，这个年龄适合发展身体素质和动作技能。第二，很多孩子已经进入初中，后面会面临升入好高中的重要考试，体育成绩和身体素质有现实意义。第三，家长从这个阶段开始更愿意让孩子参加体育健康训练营，所以有实际需求。</p>
+          </div>
+          <p class="safe">边界：不要说这个年龄“效果一定最好”。更稳妥：这个年龄符合身体发展特点、教育需求和训练营实际需求。</p>
+        </div>
+      </article>
+
+      <article class="question">
+        <div class="q-head">
+          <div class="num">4</div>
+          <div>
+            <span class="tag green">方法内容</span>
+            <h2>Какие методы педагогического руководства использовались в Вашей технологии?</h2>
+            <p class="mini">对应照片题型：你用了哪些具体方法。</p>
+          </div>
+        </div>
+        <div class="q-body">
+          <div class="script">
+            <p class="ru">Использовались ситуационные задания, модульные двигательные комбинации, работа в группах, текущая обратная связь и регулирование нагрузки по ЧСС. Обычные методы тоже сохранялись: объяснение, показ, повторение и исправление ошибок.</p>
+            <p class="zh">中文：用了情境任务、模块化动作组合、小组互动、即时反馈和按心率调节负荷。普通方法如讲解、示范、重复、纠错也保留。</p>
+          </div>
+          <p class="safe">边界：不要说普通方法没用。说创新方法是在普通方法基础上增加组织和反馈。</p>
+        </div>
+      </article>
+
+      <article class="question">
+        <div class="q-head">
+          <div class="num">5</div>
+          <div>
+            <span class="tag cyan">实验设计</span>
+            <h2>Почему сначала был поисковый эксперимент, а затем формирующий эксперимент?</h2>
+            <p class="mini">对应照片题型：为什么这样组织研究。</p>
+          </div>
+        </div>
+        <div class="q-body">
+          <div class="script">
+            <p class="ru">Сначала нужно было понять, какая структура занятия лучше. Поэтому был поисковый эксперимент. Он помог выбрать 20+10 и среднюю интенсивность. Потом структура была уже фиксированной, и в формирующем эксперименте проверялись методы педагогического руководства.</p>
+            <p class="zh">中文：先要知道课程结构怎么安排更合理，所以做搜索性实验，选出 20+10 和中等强度。之后结构固定，再用形成性实验验证指导方法。</p>
+          </div>
+          <p class="safe">边界：如果只做一次，老师会问效果到底来自时间结构、强度，还是来自方法。两次实验把问题分开。</p>
+        </div>
+      </article>
+
+      <article class="question">
+        <div class="q-head">
+          <div class="num">6</div>
+          <div>
+            <span class="tag red">评价指标</span>
+            <h2>Почему в качестве критериев эффективности выбраны PBF, ЖЕЛ, бег на выносливость и бег 50 м?</h2>
+            <p class="mini">对应照片题型：为什么选择这些效果指标。</p>
+          </div>
+        </div>
+        <div class="q-body">
+          <div class="script">
+            <p class="ru">Эти показатели отражают разные стороны результата. PBF показывает состав тела. ЖЕЛ и бег на 1000/800 м отражают функциональное состояние и выносливость. Бег 50 м показывает скоростные качества. Именно по этим показателям были наиболее устойчивые различия.</p>
+            <p class="zh">中文：这些指标代表不同结果：PBF 看身体成分，ЖЕЛ 和 1000/800 米看功能状态和耐力，50 米看速度；这些也是结果中最稳定支持实验组优势的指标。</p>
+          </div>
+          <p class="safe">边界：心理情绪、WHR、握力、仰卧起坐、柔韧性不要作为核心证据，要谨慎说。</p>
+        </div>
+      </article>
+
+      <article class="question">
+        <div class="q-head">
+          <div class="num">7</div>
+          <div>
+            <span class="tag blue">推广价值</span>
+            <h2>Могут ли результаты Вашей работы быть использованы на более широком уровне?</h2>
+            <p class="mini">对应照片题型：结果能不能用于国家/地区/实践层面。</p>
+          </div>
+        </div>
+        <div class="q-body">
+          <div class="script">
+            <p class="ru">Да, результаты могут быть использованы как основа для программ спортивно-оздоровительных лагерей и летних смен в КНР. Они полезны для проектирования занятий, подготовки наставников и контроля нагрузки. Но при внедрении нужно учитывать условия конкретного учреждения.</p>
+            <p class="zh">中文：可以作为中国体育健康营、夏令营和儿童休养机构设计课程的基础，用于课程设计、导师培训和负荷控制。但推广时要结合具体机构条件。</p>
+          </div>
+          <p class="safe">边界：不要说“已经能直接全国推广”。更稳妥是“可作为类似机构的实践依据，未来需要更多地区验证”。</p>
+        </div>
+      </article>
+
+      <article class="question">
+        <div class="q-head">
+          <div class="num">术</div>
+          <div>
+            <span class="tag violet">专业术语追问</span>
+            <h2>Если преподаватель спросит: что означает этот термин?</h2>
+            <p class="mini">PPT 和 доклад 里出现的缩写、统计方法和指标。先说“它是什么”，再说“在我的论文里用来做什么”。</p>
+          </div>
+        </div>
+        <div class="q-body">
+          <div class="term-grid">
+            <div class="term">
+              <h3>ANOVA <span>дисперсионный анализ</span></h3>
+              <p class="ru">ANOVA - это метод сравнения нескольких групп. В моей работе он использовался в поисковом эксперименте, где было шесть экспериментальных групп и одна контрольная группа.</p>
+              <p class="zh">中文：ANOVA 是多组比较。你的第一次实验有 6 个实验组和 1 个对照组，所以用它比较不同方案。</p>
+            </div>
+
+            <div class="term">
+              <h3>ANCOVA <span>ковариационный анализ</span></h3>
+              <p class="ru">ANCOVA - это сравнение групп с учетом исходного уровня. В формирующем эксперименте он помог сравнить ЭГ и КГ более корректно, потому что дети до эксперимента не были полностью одинаковыми.</p>
+              <p class="zh">中文：ANCOVA 是控制前测后的组间比较。第二次实验用它，是为了更公平地比较实验组和对照组。</p>
+            </div>
+
+            <div class="term">
+              <h3>ЧСС <span>частота сердечных сокращений</span></h3>
+              <p class="ru">ЧСС - это частота сердечных сокращений, то есть количество ударов сердца в минуту. В моей работе ЧСС использовалась для контроля интенсивности нагрузки и безопасности занятий.</p>
+              <p class="zh">中文：ЧСС 是心率，每分钟心跳次数。论文里用它控制运动强度和安全，不是最终效果指标。</p>
+            </div>
+
+            <div class="term">
+              <h3>PBF <span>percentage body fat</span></h3>
+              <p class="ru">PBF - это процент жира в организме. Этот показатель отражает состав тела. В моей работе снижение PBF было одним из основных доказательств эффективности технологии.</p>
+              <p class="zh">中文：PBF 是体脂百分比，反映身体成分。你的结果里 PBF 是核心有效性证据之一。</p>
+            </div>
+
+            <div class="term">
+              <h3>WHR <span>waist-to-hip ratio</span></h3>
+              <p class="ru">WHR - это соотношение окружности талии и бедер. Он также относится к составу тела, но в моем исследовании межгрупповые различия по WHR не были значимыми.</p>
+              <p class="zh">中文：WHR 是腰臀比，也属于身体成分指标。但你的论文中组间差异不显著，不能作为核心证据。</p>
+            </div>
+
+            <div class="term">
+              <h3>ЖЕЛ <span>жизненная емкость легких</span></h3>
+              <p class="ru">ЖЕЛ - это жизненная емкость легких. Она показывает функциональное состояние дыхательной системы. В эксперименте прирост ЖЕЛ в экспериментальной группе был больше.</p>
+              <p class="zh">中文：ЖЕЛ 是肺活量，反映呼吸系统功能状态。实验组增长更明显，是核心功能指标。</p>
+            </div>
+
+            <div class="term">
+              <h3>ЭГ / КГ <span>группы эксперимента</span></h3>
+              <p class="ru">ЭГ - это экспериментальная группа, а КГ - контрольная группа. ЭГ занималась по разработанной технологии, а КГ - по обычной организации занятий.</p>
+              <p class="zh">中文：ЭГ 是实验组，КГ 是对照组。实验组用你的技术，对照组用普通组织方式。</p>
+            </div>
+
+            <div class="term">
+              <h3>t-критерий <span>t-test</span></h3>
+              <p class="ru">t-критерий использовался для проверки различий средних значений. Проще говоря, он помогает понять, есть ли статистически значимое изменение или различие.</p>
+              <p class="zh">中文：t 检验用于检验平均值差异，简单说就是看变化或差异是否达到统计学意义。</p>
+            </div>
+
+            <div class="term">
+              <h3>LSD-сравнения <span>после ANOVA</span></h3>
+              <p class="ru">LSD-сравнения использовались после ANOVA, чтобы уточнить, между какими именно группами есть различия. Это дополнительная процедура после общего сравнения групп.</p>
+              <p class="zh">中文：LSD 是 ANOVA 之后的进一步比较，用来判断具体哪几组之间有差异。</p>
+            </div>
+
+            <div class="term">
+              <h3>н/з <span>незначимо</span></h3>
+              <p class="ru">н/з означает, что различие статистически незначимо. Если показатель н/з, я не делаю вывод о преимуществе экспериментальной группы.</p>
+              <p class="zh">中文：н/з 表示差异不显著。如果某项是 н/з，就不能说实验组有优势。</p>
+            </div>
+
+            <div class="term">
+              <h3>Шкала Лайкерта <span>5-балльная шкала</span></h3>
+              <p class="ru">Шкала Лайкерта - это шкала ответов, например от 1 до 5 баллов. В моей работе она использовалась в шкале психического здоровья как вспомогательный показатель.</p>
+              <p class="zh">中文：Likert 量表是 1 到 5 分这类评价量表。你的论文中用于心理健康量表，是辅助指标。</p>
+            </div>
+
+            <div class="term">
+              <h3>p-value <span>p-значение</span></h3>
+              <p class="ru">p-значение показывает статистическую значимость результата. Обычно p&lt;0,05 означает, что различие статистически значимо. Но важно также смотреть, какой это показатель и как его интерпретировать.</p>
+              <p class="zh">中文：p 值表示统计显著性。通常 p&lt;0.05 表示差异显著，但还要结合指标本身解释，不能只看 p 值。</p>
+            </div>
+          </div>
+          <p class="safe">总边界：统计术语不要展开数学公式。答辩时说清楚“它是什么”和“我为什么用它”就够了。</p>
+        </div>
+      </article>
+    </section>
+
+    <div class="footer">
+      来源：最终 PPT《最终.pptx》、两张学长答辩问题照片。更新日期：2026-06-07。
+    </div>
+  </main>
+</body>
+</html>
